@@ -1,105 +1,102 @@
-<div align="center">
-
 # 📊 Sales Analytics SQL
 
-### End-to-End Sales Analytics Project with MySQL, SQL and Python
+### End-to-End Sales Analytics Project with MySQL, SQL, Python, Pandas and Power BI
 
-![Python](https://img.shields.io/badge/Python-3.13-blue?style=for-the-badge&logo=python)
-![MySQL](https://img.shields.io/badge/MySQL-8.0-orange?style=for-the-badge&logo=mysql)
-![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas)
-![Git](https://img.shields.io/badge/Git-Version%20Control-red?style=for-the-badge&logo=git)
-![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi&logoColor=black)
 
-A complete sales analytics project that simulates the daily workflow of a Data Analyst through relational database modeling, SQL business analysis and data processing with Python.
-
-</div>
+Projeto completo de análise de vendas que simula o fluxo de trabalho de um Analista de Dados, desde a modelagem de um banco relacional até análises em SQL, processamento com Python e visualização no Power BI.
 
 ---
 
-## 📌 Project Overview
+## 📊 Dashboard Power BI
 
-This project simulates a retail business environment in which sales data is stored, processed and transformed into actionable business insights.
-
-The solution covers the main stages of an analytical workflow:
-
-- Relational database modeling
-- Database creation with MySQL
-- Data loading through SQL scripts
-- Business analysis with SQL
-- Data processing with Python and Pandas
-- KPI calculation
-- Analytical report generation
-- CSV export
-- Git and GitHub version control
-
----
-# 📊 Dashboard Power BI
-
-O dashboard foi desenvolvido no Microsoft Power BI para visualizar os principais indicadores de vendas, permitindo uma análise rápida do desempenho comercial.
-
-### Preview
+O dashboard apresenta os principais indicadores comerciais e permite analisar tendências, categorias, produtos e estados com maior faturamento.
 
 ![Sales Analytics Dashboard](dashboard/dashboard-print.png)
----
 
-## 🎯 Project Objectives
+Principais indicadores:
 
-The main objectives of this project are:
+- Faturamento total
+- Total de pedidos
+- Produtos vendidos
+- Ticket médio
+- Faturamento mensal
+- Faturamento por categoria
+- Top 10 produtos por faturamento
+- Faturamento por estado
 
-- Build a structured relational database
-- Analyze sales performance
-- Identify the most profitable products and categories
-- Rank customers by total spending
-- Analyze revenue by period and location
-- Monitor inventory levels
-- Calculate relevant business KPIs
-- Generate reusable datasets and reports
-
----
-
-## 🏗 Database Structure
+Arquivo editável:
 
 ```text
-Customers
-    │
-    └── Orders
-           │
-           └── Order Items
-                  │
-                  └── Products
-                         │
-                         └── Categories
+dashboard/POWER-BI-BD.pbix
 ```
-## 📸 Screenshots
-
-### Project Structure
-
-The project is organized into separate folders for data, SQL scripts, Python analysis, documentation, images, and dashboard files.
-
-![Project Structure](images/project-structure.png)
 
 ---
 
-### SQL Customer Ranking
+## 🔄 Fluxo do Projeto
 
-Example of a business query using `JOIN`, aggregation with `SUM()`, and the `RANK()` window function to identify the customers with the highest total spending.
-
-![Customer Ranking Query](images/customer-ranking.png)
-
-### Main relationships
-
-- One customer can place multiple orders
-- One order can contain multiple items
-- Each order item is associated with one product
-- Each product belongs to one category
+```text
+Arquivos CSV
+     │
+     ▼
+Banco de Dados MySQL
+     │
+     ▼
+Consultas de Negócio em SQL
+     │
+     ▼
+Processamento com Python e Pandas
+     │
+     ▼
+Arquivos Analíticos
+     │
+     ▼
+Dashboard no Power BI
+```
 
 ---
 
-## 📂 Project Structure
+## 🎯 Objetivos
+
+- Construir um banco de dados relacional estruturado
+- Analisar o desempenho comercial
+- Calcular indicadores relevantes para o negócio
+- Identificar produtos e categorias com maior faturamento
+- Classificar clientes por valor de compra
+- Analisar receita por período e localização
+- Monitorar produtos com estoque baixo
+- Automatizar relatórios analíticos
+- Criar um dashboard executivo no Power BI
+
+---
+
+## 🗄️ Estrutura do Banco
+
+```text
+Clientes
+   │
+   └── Pedidos
+          │
+          └── Itens do Pedido
+                    │
+                    └── Produtos
+                           │
+                           └── Categorias
+```
+
+---
+
+## 📁 Estrutura do Projeto
 
 ```text
 sales-analytics-sql/
-
+├── dashboard/
+│   ├── dashboard-print.png
+│   ├── POWER-BI-BD.pbix
+│   └── README.md
 ├── data/
 │   ├── clientes.csv
 │   ├── categorias.csv
@@ -108,152 +105,92 @@ sales-analytics-sql/
 │   ├── itens_pedido.csv
 │   ├── vendas_detalhadas.csv
 │   └── resultados/
-│       ├── faturamento_mensal.csv
-│       ├── faturamento_por_categoria.csv
-│       ├── faturamento_por_estado.csv
-│       ├── top_10_clientes.csv
-│       └── top_10_produtos.csv
-│
 ├── database/
 │   ├── 01_create_database.sql
 │   ├── 02_insert_data.sql
 │   └── 03_business_queries.sql
-│
-├── python/
-│   └── analysis.py
-│
 ├── docs/
 │   └── GUIA_RAPIDO.md
-│
-├── dashboard/
-│   └── README.md
-│
+├── images/
+│   ├── customer-ranking.png
+│   └── project-structure.png
+├── python/
+│   └── analysis.py
 ├── .gitignore
-├── requirements.txt
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
-## 📊 Dataset
+## 📦 Dataset
 
-The project simulates a retail company with a database large enough to support meaningful business analysis.
-
-| Table | Records |
+| Tabela | Registros |
 |---|---:|
-| Customers | 500 |
-| Products | 100 |
-| Categories | 10 |
-| Orders | 5,000 |
-| Order Items | 14,000+ |
+| Clientes | 500 |
+| Produtos | 100 |
+| Categorias | 10 |
+| Pedidos | 5.000 |
+| Itens de pedidos | 14.000+ |
+
+> Todos os dados são simulados para fins educacionais e de portfólio.
 
 ---
 
-## 📈 Business Questions Answered
+## 💼 Perguntas de Negócio
 
-The SQL queries were created to answer common questions requested by managers and business teams.
-
-Examples:
-
-- What is the total revenue?
-- How many orders were placed?
-- What is the average ticket?
-- What is the monthly revenue?
-- Which products generate the most revenue?
-- Which categories are the most profitable?
-- Which customers spend the most?
-- Which states generate the most revenue?
-- Which customers spend above the average?
-- What is the ranking of categories?
-- Which products have low inventory?
-- What is the monthly revenue growth rate?
-- What is the percentage contribution of each category?
-- What is the three-month moving average?
-- How can customers be segmented by spending?
+- Qual é o faturamento total?
+- Quantos pedidos foram realizados?
+- Qual é o ticket médio?
+- Como o faturamento evolui ao longo dos meses?
+- Quais produtos geram mais receita?
+- Quais categorias possuem maior faturamento?
+- Quais clientes gastam mais?
+- Quais estados geram mais receita?
+- Quais clientes gastam acima da média?
+- Quais produtos possuem estoque baixo?
+- Qual é a taxa de crescimento mensal?
+- Qual é a participação de cada categoria?
+- Qual é a média móvel dos últimos três meses?
+- Como segmentar clientes por valor gasto?
 
 ---
 
-## 🧠 SQL Concepts Applied
+## 🧠 Conceitos SQL Aplicados
 
-The project applies fundamental and advanced SQL concepts:
-
-- `SELECT`
-- `WHERE`
-- `ORDER BY`
-- `GROUP BY`
-- `INNER JOIN`
-- `LEFT JOIN`
-- Aggregate functions
-- `SUM()`
-- `COUNT()`
-- `AVG()`
-- `ROUND()`
+- `SELECT`, `WHERE`, `ORDER BY` e `GROUP BY`
+- `INNER JOIN` e `LEFT JOIN`
+- `SUM()`, `COUNT()` e `AVG()`
 - `CASE`
+- Subconsultas
 - Views
-- Common Table Expressions with `WITH`
-- Window functions
-- `RANK()`
-- `DENSE_RANK()`
-- `LAG()`
-- Moving averages
-- Subqueries
-- Aliases
-- Data segmentation
+- CTEs com `WITH`
+- Funções de janela
+- `RANK()`, `DENSE_RANK()` e `LAG()`
+- Média móvel
+- Segmentação de dados
 
----
-
-## 🔍 Main SQL Analyses
-
-The file below contains the main business queries:
+Arquivo principal:
 
 ```text
 database/03_business_queries.sql
 ```
 
-Some of the analyses included are:
-
-- Total revenue
-- Total number of orders
-- Average ticket
-- Monthly revenue
-- Top products by revenue
-- Revenue by category
-- Top customers
-- Revenue by state
-- Customers above average spending
-- Category ranking
-- Low-stock products
-- Detailed sales view
-- Customer ranking
-- Customer segmentation
-- Monthly growth rate
-- Category revenue share
-- Three-month moving average
-
 ---
 
-## 🐍 Python Analysis
+## 🐍 Análise com Python
 
-Python was used to process and analyze the project data outside the database environment.
+O script em Python utiliza Pandas para:
 
-The script performs the following tasks:
+- Ler os arquivos CSV
+- Unir os conjuntos relacionais
+- Criar a tabela detalhada de vendas
+- Calcular KPIs
+- Agregar receita por mês, categoria e estado
+- Identificar os principais produtos e clientes
+- Exportar relatórios automaticamente
 
-- Reads CSV files
-- Merges relational datasets
-- Creates a detailed sales table
-- Calculates business KPIs
-- Aggregates revenue by month
-- Aggregates revenue by category
-- Aggregates revenue by state
-- Identifies top products
-- Identifies top customers
-- Exports analytical reports
-
-### Library used
-
-- Pandas
-
-### Main script
+Script:
 
 ```text
 python/analysis.py
@@ -261,164 +198,92 @@ python/analysis.py
 
 ---
 
-## 📊 Main KPIs
+## 📈 Principais Resultados
 
-The analysis calculates indicators such as:
-
-- Total revenue
-- Total orders
-- Average ticket
-- Number of customers served
-- Revenue by month
-- Revenue by category
-- Revenue by state
-- Top products
-- Top customers
+- Faturamento total superior a R$ 50 milhões
+- Ticket médio superior a R$ 10 mil
+- Notebooks como categoria de maior faturamento
+- Concentração de receita em produtos específicos
+- Clientes com gastos acima da média
+- Diferenças de faturamento entre estados
+- Períodos de crescimento e queda nas vendas
+- Produtos com estoque reduzido
 
 ---
 
-## 💡 Insights Obtained
-
-The generated data allows the identification of relevant business insights, such as:
-
-- Total revenue above R$ 50 million
-- Average ticket above R$ 10 thousand
-- Notebooks as the category with the highest revenue
-- MacBook Air Plus as one of the highest-revenue products
-- Customers with spending above the overall average
-- Revenue concentration by product category
-- Monthly sales growth and decline periods
-- Products with low inventory levels
-
-> The values above are based on the simulated dataset generated for this project.
-
----
-
-## 📁 Generated Outputs
-
-After running the Python script, the following reports are generated automatically:
-
-```text
-data/resultados/
-
-├── faturamento_mensal.csv
-├── faturamento_por_categoria.csv
-├── faturamento_por_estado.csv
-├── top_10_clientes.csv
-└── top_10_produtos.csv
-```
-
-A consolidated analytical file is also generated:
-
-```text
-data/vendas_detalhadas.csv
-```
-
----
-
-## 🚀 How to Run
-
-### 1. Clone the repository
+## 🚀 Como Executar
 
 ```bash
 git clone https://github.com/karlosqwer/sales-analytics-sql.git
-```
-
-### 2. Access the project folder
-
-```bash
 cd sales-analytics-sql
-```
-
-### 3. Install Python dependencies
-
-```bash
 pip install -r requirements.txt
+python python/analysis.py
 ```
 
-### 4. Create the database
-
-Run:
+Depois, execute os scripts SQL na ordem:
 
 ```text
 database/01_create_database.sql
-```
-
-### 5. Insert the data
-
-Run:
-
-```text
 database/02_insert_data.sql
-```
-
-### 6. Execute the business queries
-
-Run:
-
-```text
 database/03_business_queries.sql
 ```
 
-### 7. Execute the Python analysis
+Para visualizar o dashboard, abra:
 
-```bash
-python python/analysis.py
+```text
+dashboard/POWER-BI-BD.pbix
 ```
 
 ---
 
-## 🛠 Technologies
+## 🛠️ Tecnologias
 
 - MySQL
 - SQL
 - Python
 - Pandas
+- Power BI
 - Git
 - GitHub
 
 ---
 
-## 📚 Skills Demonstrated
+## ✅ Habilidades Demonstradas
 
-- Relational database design
-- SQL development
-- Data modeling
-- Data analysis
-- Business intelligence
-- Data processing with Python
-- KPI calculation
-- Report generation
-- Data aggregation
-- Data segmentation
-- Window functions
-- Git workflow
-- Technical documentation
-
----
-
-## 🔮 Future Improvements
-
-- Power BI dashboard
-- Interactive visualizations
-- Automated ETL pipeline
-- Data warehouse modeling
-- Stored procedures
-- Triggers
-- Index optimization
-- Automated data validation
-- Docker support
-- Unit tests for the Python pipeline
+- Modelagem de banco relacional
+- Desenvolvimento de consultas SQL
+- Joins, CTEs e funções de janela
+- Limpeza e transformação de dados
+- Análise exploratória
+- Cálculo de KPIs
+- Automação de relatórios
+- Criação de dashboards
+- Business Intelligence
+- Visualização de dados
+- Versionamento com Git
+- Documentação técnica
 
 ---
 
-## 👨‍💻 Author
+## 🔮 Melhorias Futuras
+
+- Pipeline ETL automatizado
+- Modelagem dimensional em esquema estrela
+- Stored procedures e triggers
+- Otimização com índices
+- Validação automática de qualidade
+- Docker
+- Testes automatizados
+- Publicação no Power BI Service
+
+---
+
+## 👨‍💻 Autor
 
 **Karlos Eduardo**
 
-GitHub:  
-https://github.com/karlosqwer
+[GitHub](https://github.com/karlosqwer)
 
 ---
 
-⭐ If this project was useful, consider giving the repository a star.
+⭐ Caso este projeto tenha sido útil, considere deixar uma estrela no repositório.
