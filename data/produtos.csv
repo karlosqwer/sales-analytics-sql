@@ -1,0 +1,101 @@
+﻿id_produto;nome_produto;preco;estoque;id_categoria
+1;Notebook Dell Inspiron Plus;3849.84;24;1
+2;Notebook Acer Aspire Max;3149.79;84;1
+3;MacBook Air;7819.93;71;1
+4;MacBook Air 2026;8371.9;125;1
+5;Notebook Lenovo LOQ Pro;4714.97;109;1
+6;Notebook Dell Inspiron 2026;3733.67;92;1
+7;MacBook Air Plus;7970.03;174;1
+8;Notebook Acer Aspire Plus;3189.62;59;1
+9;MacBook Air Plus;7423.6;109;1
+10;Notebook Dell Inspiron Plus;4097.87;170;1
+11;Monitor Samsung 27 2026;1418.36;91;2
+12;Monitor Samsung 27 Plus;1430.48;108;2
+13;Monitor Samsung 27;1471.04;59;2
+14;Monitor AOC Gamer 2026;1021.35;148;2
+15;Monitor LG 24 Premium;904.07;61;2
+16;Monitor Samsung 27 Plus;1435.67;25;2
+17;Monitor Samsung 27 Premium;1319.15;170;2
+18;Monitor Samsung 27 Pro;1232.6;47;2
+19;Monitor AOC Gamer Max;1202.25;26;2
+20;Monitor Samsung 27 2026;1312.11;110;2
+21;Mouse sem fio 2026;80.0;100;3
+22;Mouse Gamer;141.28;176;3
+23;Webcam Full HD Pro;231.93;19;3
+24;Mouse sem fio Plus;102.55;118;3
+25;Mouse Gamer;117.77;64;3
+26;Teclado Mecânico Max;284.4;126;3
+27;Teclado Mecânico Plus;333.21;131;3
+28;Mouse Gamer Plus;128.9;29;3
+29;Mouse Gamer Premium;119.28;87;3
+30;Webcam Full HD Max;240.08;141;3
+31;Pendrive 128GB Plus;80.58;120;4
+32;Pendrive 128GB Plus;71.76;19;4
+33;SSD 1TB;532.34;173;4
+34;SSD 1TB Premium;525.98;70;4
+35;SSD 500GB 2026;249.18;151;4
+36;Pendrive 128GB Max;75.31;111;4
+37;SSD 500GB Pro;284.19;118;4
+38;Pendrive 128GB;86.22;58;4
+39;Pendrive 128GB 2026;79.58;9;4
+40;SSD 500GB Pro;257.8;24;4
+41;iPhone 15 2026;4931.45;91;5
+42;Galaxy S25 Max;4280.52;179;5
+43;Redmi Note 2026;2167.4;88;5
+44;Redmi Note 2026;1873.28;37;5
+45;Motorola Edge Plus;2770.61;166;5
+46;Galaxy S25 Premium;5031.79;84;5
+47;iPhone 15 Premium;4855.59;38;5
+48;Galaxy S25 Plus;4284.32;103;5
+49;Galaxy S25 2026;4628.86;160;5
+50;Galaxy S25 2026;4622.83;55;5
+51;Xbox Series X Premium;4407.79;173;6
+52;PlayStation 5 2026;3700.12;81;6
+53;PlayStation 5 Pro;3859.65;123;6
+54;Nintendo Switch OLED;2672.75;10;6
+55;Xbox Series X Pro;4010.45;106;6
+56;Nintendo Switch OLED 2026;2535.08;112;6
+57;Nintendo Switch OLED Max;2381.23;121;6
+58;Xbox Series X Pro;3879.89;15;6
+59;PlayStation 5 Plus;3555.22;65;6
+60;Nintendo Switch OLED Plus;2220.91;125;6
+61;Microfone USB 2026;396.89;154;7
+62;Fone JBL Plus;381.14;101;7
+63;Fone JBL Premium;349.61;63;7
+64;Microfone USB;420.59;175;7
+65;Headset Gamer Plus;334.75;16;7
+66;Microfone USB Plus;379.81;30;7
+67;Microfone USB;424.77;68;7
+68;Headset Gamer Premium;311.52;97;7
+69;Microfone USB Pro;407.98;60;7
+70;Headset Gamer;310.07;144;7
+71;Mochila Executiva 2026;256.26;90;8
+72;Mochila Executiva Plus;258.56;139;8
+73;Suporte Notebook Pro;136.68;113;8
+74;Suporte Notebook Plus;133.58;40;8
+75;Hub USB-C Pro;174.61;90;8
+76;Hub USB-C Premium;187.25;44;8
+77;Mochila Executiva Premium;247.86;123;8
+78;Suporte Notebook Premium;131.24;31;8
+79;Base Refrigerada 2026;194.73;102;8
+80;Base Refrigerada Max;174.21;8;8
+81;Memória RAM 16GB Premium;331.21;170;9
+82;Fonte 650W;547.31;109;9
+83;Placa de Vídeo Max;3087.47;134;9
+84;Fonte 650W Plus;551.72;94;9
+85;Placa de Vídeo 2026;3108.32;95;9
+86;Memória RAM 16GB;262.91;125;9
+87;Memória RAM 16GB;327.86;48;9
+88;Processador Ryzen 5 Max;1056.13;117;9
+89;Placa de Vídeo Premium;3151.4;174;9
+90;Fonte 650W Pro;557.94;78;9
+91;Cadeira Ergonômica Premium;879.49;29;10
+92;Luminária LED Premium;168.49;50;10
+93;Cadeira Ergonômica Max;943.92;67;10
+94;Organizador de Cabos Premium;45.14;32;10
+95;Cadeira Ergonômica Pro;907.76;41;10
+96;Mesa Escritório 2026;797.59;10;10
+97;Cadeira Ergonômica Premium;875.39;38;10
+98;Organizador de Cabos Premium;45.69;26;10
+99;Mesa Escritório Max;678.0;34;10
+100;Cadeira Ergonômica Plus;881.22;84;10
