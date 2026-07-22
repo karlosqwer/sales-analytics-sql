@@ -33,8 +33,6 @@ Dashboard desenvolvido no Power BI utilizando os dados do projeto Sales Analytic
 
 ## Preview
 
-Em breve...
+## Status
 
-```text
-dashboard/images/dashboard.png
-```
+Dashboard em desenvolvimento. A versão atual do projeto contempla modelagem de dados, análises SQL e processamento com Python/Pandas.

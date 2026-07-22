@@ -1,84 +1,11 @@
-/*
-==========================================================
-PROJETO: SALES ANALYTICS SQL
-Autor: Karlos Eduardo
-Descrição:
-Banco de dados para análise de vendas de uma empresa fictícia
-de tecnologia (TechStore Brasil).
-==========================================================
-*/
-
 DROP DATABASE IF EXISTS sales_analytics;
-
 CREATE DATABASE sales_analytics;
-
 USE sales_analytics;
-
--- ===========================
--- TABELA CLIENTES
--- ===========================
-
-CREATE TABLE clientes (
-    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100),
-    email VARCHAR(100),
-    cidade VARCHAR(100),
-    estado CHAR(2),
-    idade INT,
-    sexo CHAR(1)
-);
-
--- ===========================
--- TABELA CATEGORIAS
--- ===========================
-
-CREATE TABLE categorias (
-    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
-    nome_categoria VARCHAR(100)
-);
-
--- ===========================
--- TABELA PRODUTOS
--- ===========================
-
-CREATE TABLE produtos (
-    id_produto INT AUTO_INCREMENT PRIMARY KEY,
-    nome_produto VARCHAR(150),
-    preco DECIMAL(10,2),
-    estoque INT,
-    id_categoria INT,
-
-    FOREIGN KEY (id_categoria)
-        REFERENCES categorias(id_categoria)
-);
-
--- ===========================
--- TABELA PEDIDOS
--- ===========================
-
-CREATE TABLE pedidos (
-    id_pedido INT AUTO_INCREMENT PRIMARY KEY,
-    id_cliente INT,
-    data_pedido DATE,
-
-    FOREIGN KEY (id_cliente)
-        REFERENCES clientes(id_cliente)
-);
-
--- ===========================
--- TABELA ITENS_PEDIDO
--- ===========================
-
-CREATE TABLE itens_pedido (
-    id_item INT AUTO_INCREMENT PRIMARY KEY,
-    id_pedido INT,
-    id_produto INT,
-    quantidade INT,
-    preco_unitario DECIMAL(10,2),
-
-    FOREIGN KEY (id_pedido)
-        REFERENCES pedidos(id_pedido),
-
-    FOREIGN KEY (id_produto)
-        REFERENCES produtos(id_produto)
-);
+CREATE TABLE clientes (id_cliente INT AUTO_INCREMENT PRIMARY KEY,nome VARCHAR(100) NOT NULL,email VARCHAR(120) NOT NULL UNIQUE,cidade VARCHAR(100) NOT NULL,estado CHAR(2) NOT NULL,idade INT NOT NULL,sexo CHAR(1) NOT NULL);
+CREATE TABLE categorias (id_categoria INT AUTO_INCREMENT PRIMARY KEY,nome_categoria VARCHAR(100) NOT NULL UNIQUE);
+CREATE TABLE produtos (id_produto INT AUTO_INCREMENT PRIMARY KEY,nome_produto VARCHAR(150) NOT NULL,preco DECIMAL(10,2) NOT NULL,estoque INT NOT NULL,id_categoria INT NOT NULL,FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria));
+CREATE TABLE pedidos (id_pedido INT AUTO_INCREMENT PRIMARY KEY,id_cliente INT NOT NULL,data_pedido DATE NOT NULL,FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente));
+CREATE TABLE itens_pedido (id_item INT AUTO_INCREMENT PRIMARY KEY,id_pedido INT NOT NULL,id_produto INT NOT NULL,quantidade INT NOT NULL,preco_unitario DECIMAL(10,2) NOT NULL,FOREIGN KEY (id_pedido) REFERENCES pedidos(id_pedido),FOREIGN KEY (id_produto) REFERENCES produtos(id_produto));
+CREATE INDEX idx_pedidos_data ON pedidos(data_pedido);
+CREATE INDEX idx_pedidos_cliente ON pedidos(id_cliente);
+CREATE INDEX idx_itens_produto ON itens_pedido(id_produto);
