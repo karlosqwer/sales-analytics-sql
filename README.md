@@ -33,6 +33,14 @@ The solution covers the main stages of an analytical workflow:
 - Git and GitHub version control
 
 ---
+# 📊 Dashboard Power BI
+
+O dashboard foi desenvolvido no Microsoft Power BI para visualizar os principais indicadores de vendas, permitindo uma análise rápida do desempenho comercial.
+
+### Preview
+
+![Sales Analytics Dashboard](dashboard/dashboard-print.png)
+---
 
 ## 🎯 Project Objectives
 
