@@ -1,11 +1,11 @@
 ﻿id_cliente;nome;cidade;estado;valor_total
-88;Fernanda Gomes;Joinville;SC;247825.05
-339;Fernanda Pereira;Londrina;PR;245536.88
-450;Juliana Melo;Campinas;SP;238739.21
-53;Carlos Gomes;Petrolina;PE;235960.56
-141;Gabriel Ribeiro;Uberlândia;MG;232623.07
-97;Natália Souza;Santos;SP;225858.32
-310;Juliana Souza;Natal;RN;223343.77
-258;Daniela Rodrigues;Joinville;SC;217431.12
-491;Sabrina Alves;Salvador;BA;217095.8
-192;Carlos Alves;Petrolina;PE;214695.25
+88;Fernanda Gomes;Joinville;SC;247825,05
+339;Fernanda Pereira;Londrina;PR;245536,88
+450;Juliana Melo;Campinas;SP;238739,21
+53;Carlos Gomes;Petrolina;PE;235960,56
+141;Gabriel Ribeiro;Uberlândia;MG;232623,07
+97;Natália Souza;Santos;SP;225858,32
+310;Juliana Souza;Natal;RN;223343,77
+258;Daniela Rodrigues;Joinville;SC;217431,12
+491;Sabrina Alves;Salvador;BA;217095,8
+192;Carlos Alves;Petrolina;PE;214695,25

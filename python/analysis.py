@@ -5,7 +5,7 @@ import pandas as pd
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BASE_DIR / "data"
-OUTPUT_DIR = BASE_DIR / "data" / "resultados"
+OUTPUT_DIR = DATA_DIR / "resultados"
 
 OUTPUT_DIR.mkdir(exist_ok=True)
 
@@ -19,15 +19,37 @@ def carregar_dados() -> tuple[
 ]:
     clientes = pd.read_csv(DATA_DIR / "clientes.csv", sep=";")
     categorias = pd.read_csv(DATA_DIR / "categorias.csv", sep=";")
-    produtos = pd.read_csv(DATA_DIR / "produtos.csv", sep=";")
-
+    produtos = pd.read_csv(
+        DATA_DIR / "produtos.csv",
+        sep=";",
+        decimal=".",
+    )
     pedidos = pd.read_csv(
         DATA_DIR / "pedidos.csv",
         sep=";",
         parse_dates=["data_pedido"],
     )
+    itens = pd.read_csv(
+        DATA_DIR / "itens_pedido.csv",
+        sep=";",
+        decimal=".",
+    )
 
-    itens = pd.read_csv(DATA_DIR / "itens_pedido.csv", sep=";")
+    # Garante que os campos numéricos sejam interpretados corretamente
+    produtos["preco"] = pd.to_numeric(
+        produtos["preco"],
+        errors="raise",
+    )
+
+    itens["preco_unitario"] = pd.to_numeric(
+        itens["preco_unitario"],
+        errors="raise",
+    )
+
+    itens["quantidade"] = pd.to_numeric(
+        itens["quantidade"],
+        errors="raise",
+    )
 
     return clientes, categorias, produtos, pedidos, itens
 
@@ -60,6 +82,19 @@ def criar_base_vendas(
     return vendas
 
 
+def salvar_csv(
+    dataframe: pd.DataFrame,
+    caminho: Path,
+) -> None:
+    dataframe.to_csv(
+        caminho,
+        sep=";",
+        decimal=",",
+        index=False,
+        encoding="utf-8-sig",
+    )
+
+
 def executar_analises(vendas: pd.DataFrame) -> None:
     faturamento_total = vendas["valor_total"].sum()
 
@@ -89,13 +124,19 @@ def executar_analises(vendas: pd.DataFrame) -> None:
     )
 
     faturamento_categoria = (
-        vendas.groupby("nome_categoria", as_index=False)["valor_total"]
+        vendas.groupby(
+            "nome_categoria",
+            as_index=False,
+        )["valor_total"]
         .sum()
         .sort_values("valor_total", ascending=False)
     )
 
     faturamento_estado = (
-        vendas.groupby("estado", as_index=False)["valor_total"]
+        vendas.groupby(
+            "estado",
+            as_index=False,
+        )["valor_total"]
         .sum()
         .sort_values("valor_total", ascending=False)
     )
@@ -110,46 +151,34 @@ def executar_analises(vendas: pd.DataFrame) -> None:
         .head(10)
     )
 
-    vendas.to_csv(
+    salvar_csv(
+        vendas,
         DATA_DIR / "vendas_detalhadas.csv",
-        sep=";",
-        index=False,
-        encoding="utf-8-sig",
     )
 
-    faturamento_mensal.to_csv(
+    salvar_csv(
+        faturamento_mensal,
         OUTPUT_DIR / "faturamento_mensal.csv",
-        sep=";",
-        index=False,
-        encoding="utf-8-sig",
     )
 
-    top_produtos.to_csv(
+    salvar_csv(
+        top_produtos,
         OUTPUT_DIR / "top_10_produtos.csv",
-        sep=";",
-        index=False,
-        encoding="utf-8-sig",
     )
 
-    faturamento_categoria.to_csv(
+    salvar_csv(
+        faturamento_categoria,
         OUTPUT_DIR / "faturamento_por_categoria.csv",
-        sep=";",
-        index=False,
-        encoding="utf-8-sig",
     )
 
-    faturamento_estado.to_csv(
+    salvar_csv(
+        faturamento_estado,
         OUTPUT_DIR / "faturamento_por_estado.csv",
-        sep=";",
-        index=False,
-        encoding="utf-8-sig",
     )
 
-    top_clientes.to_csv(
+    salvar_csv(
+        top_clientes,
         OUTPUT_DIR / "top_10_clientes.csv",
-        sep=";",
-        index=False,
-        encoding="utf-8-sig",
     )
 
     print("\n=== INDICADORES DA TECHSTORE BRASIL ===")
@@ -159,10 +188,18 @@ def executar_analises(vendas: pd.DataFrame) -> None:
     print(f"Clientes atendidos: {total_clientes:,}")
 
     print("\n=== CATEGORIA COM MAIOR FATURAMENTO ===")
-    print(faturamento_categoria.head(1).to_string(index=False))
+    print(
+        faturamento_categoria
+        .head(1)
+        .to_string(index=False)
+    )
 
     print("\n=== PRODUTO COM MAIOR FATURAMENTO ===")
-    print(top_produtos.head(1).to_string(index=False))
+    print(
+        top_produtos
+        .head(1)
+        .to_string(index=False)
+    )
 
     print("\nAnálises concluídas com sucesso.")
     print(f"Arquivos gerados em: {OUTPUT_DIR}")
